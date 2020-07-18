@@ -1,0 +1,8 @@
+name,servo_type,servo_id,min_angle,max_angle,is_gripper,dh_a,dh_alpha,dh_d,dh_theta
+str,str,int,float,float,bool,float,float,float,float
+base,MX,1,-180,180,False,0,0,0,0
+shoulder,MX,2,-180,180,False,0,0,0,0
+elbow,MX,3,-180,180,False,0,0,0,0
+wrist,AX,4,-180,180,False,0,0,0,0
+wrist2,XL,5,-180,180,False,0,0,0,0
+wrist3,XL,6,-180,180,True,0,0,0,0
