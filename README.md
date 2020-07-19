@@ -11,7 +11,9 @@ The Rexarm project is one of three projects I took part in for the Robotic Syste
 The Kinect camera calibration and implementation in the GUI allows the user to mouse over the video feed and be given the pixel location location, as well as corresponding world frame (robot frame) coordinates. To do this, we performed the following:
 - Found the affine transformation between the RGB and depth cameras by entering the coordinates of the board corners from both images into ``test_kinect.py``, then stored the result in ``kinect.py``
 
-[IMAGE]
+<p align="center">
+  <img src="media/calibration.JPG" width="640">
+</p>
 
 - Used the provided ``util/camera_cal.py`` and a checkerboard in order to find the intrinsic matrix, allowing us to move between the camera frame coordinates and the pixel location in the camera output
 - Wrote ``calibrate()`` in ``state_machine.py`` that takes in pixel locations on the board via mouse clicks, then uses ``cv2.solvePnP`` to find the extrinsic matrix that transforms between the camera frame and world frame
@@ -23,7 +25,6 @@ This portion of the project was still being iterated upon, but we were able to g
 - Search for surfaces within a margin of error of those depth values, removing the rest, and filtering the image for noise
 - Use shape contours to intialize and store a ``Block`` class variable, which stores the block height, pixel location, world frame location, orientation, and color, used by the robot later to find and grab the block
 
-[IMAGE (maybe)]
 
 ## Part 2: Robot Manipulator
 
@@ -32,7 +33,9 @@ This portion of the project was still being iterated upon, but we were able to g
 - The team opted to use a cubic spline as the movement profile in order to prevent jerky motion and wear on the motors 
 - Given initial and final positions and velocities, we solve for the position equation of each joint, then the max speed dictates the initial and final times
 
-[IMAGE]
+<p align="center">
+  <img src="media/cubic.JPG" width="640">
+</p>
 
 - Interpolated positions are fed to the Rexarm in order to replicate the desired trajectory
 
@@ -45,7 +48,9 @@ The team opted to use Denavit-Hartenberg parameters to implement kinematics, don
   - Given the desired orientation of the end effector, determining the location of the wrist joint
   - Solving for all four solutions to reach the wrist joint position, then adding necessary wrist joint angle
   
-[IMAGE]
+<p align="center">
+  <img src="media/ik.JPG" width="480">
+</p>
 
 - IK solutions are compared to the reachable angle positions of all joints to see which are achievable by the robot, and the most suitable one is selected
 
