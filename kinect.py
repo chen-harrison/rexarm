@@ -191,7 +191,6 @@ class Kinect():
 
        @return     QImage
        """
-
        frame = np.zeros((480,640, 3)).astype(np.uint8)
        frame[...,0] = 1
        frame[...,1] = 0
@@ -215,7 +214,6 @@ class Kinect():
 
         @return     Affine transform between coordinates.
         """
-
         if coord1.shape[0] != coord2.shape[0]:
             print("size of coord1 and coord2 do not match!")
             return -1
@@ -362,12 +360,12 @@ class Kinect():
         block_pwidth = 22   # TODO: get this from actual block depth
         smoothing_size = 3  # number of pixels for smoothing (more = smoother)
         maxBlockHeight = 5  # maximum number of stacked blocks to detect
-        kernel = np.ones((smoothing_size,smoothing_size),np.uint8) #kernel for smoothing
+        kernel = np.ones((smoothing_size,smoothing_size),np.uint8) # kernel for smoothing
 
         self.blocks = []
         self.block_contours = []
         lastFilterFrame = np.zeros(self.DepthFrameRaw.shape, dtype=np.uint8) # initialize last frame to having nothing
-        for i in range(maxBlockHeight,0,-1): # detect blocks stacked up to 5 high, starting from the top
+        for i in range(maxBlockHeight, 0, -1): # detect blocks stacked up to 5 high, starting from the top
             # remember, subtracting d makes it stacked higher
             d = board_depth_d - block_depth_d[i-1] # half a block's height less than the top
             self.DepthFrameFiltered = ((self.DepthFrameRaw < d) * 255).astype(np.uint8)
