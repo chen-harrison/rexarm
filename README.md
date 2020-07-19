@@ -63,8 +63,5 @@ The team opted to use Denavit-Hartenberg parameters to implement kinematics, don
   <img src="media/ik.JPG" width="480">
 </p>
 
-- IK solutions are compared to the reachable angle positions of all joints to see which are achievable by the robot, and the most suitable one is selected
-
-
 ### *Next Steps*
 Right before the lab was shut down due to COVID-19, the team had an algorithm written for a pick-and-place function that would be commanded by mouse clicks in the GUI. From there, we would use color recognition and the stored ``Block`` variables to have the robot act autonomously based on block color, height, position, etc. That would have set us up nicely for the competition aspect of the project, where teams compete on a series of competency tasks on the last day of the project.
