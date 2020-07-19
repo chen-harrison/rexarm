@@ -2,7 +2,13 @@
 
 The Rexarm project is one of three projects I took part in for the Robotic Systems Laboratory course (ROB 550) at the University of Michigan. The objective was to program a 4-DOF robot manipulator that could use an overhead Kinect sensor to move and stack blocks based on color, but due to the COVID-19 pandemic, the project was cut short. Our team was still able to implement a majority of the desired functionality, however, the highlights of which I would like to share here. Thanks to teammates Preeti Kannapan and Niraj Patel for their work on the project.
 
-<sup>NOTE: While the progression of the project did not start with the Kinect sensor and end with robot kinematics, categorizing them this way is the most digestible.</sup>
+<p align="center">
+  <img src="media/architecture.JPG" width="480">
+</p>
+
+<sup>NOTE 1: While the progression of the project did not start with the Kinect sensor and end with robot kinematics, categorizing them this way is the most digestible.</sup>
+<br>
+<sup>NOTE 2: Due to the early end of the project, I was unable to capture relevant photos or data demonstrating the functionality, so many of these images and equations are taken from the ROB 550 lecture slides.</sup>
 
 
 ## Part 1: Kinect
@@ -40,6 +46,11 @@ This portion of the project was still being iterated upon, but we were able to g
 - Interpolated positions are fed to the Rexarm in order to replicate the desired trajectory
 
 ### *Forward/Inverse Kinematics*
+
+<p align="center">
+  <img src="media/rexarm.JPG" width="360">
+</p>
+
 The team opted to use Denavit-Hartenberg parameters to implement kinematics, done mostly in ``kinematics.py``.
 - Correctly implementing FK was made difficult by the default 0 position of the motors did not match the zero position of the robot, requiring angle displacements to be used as well
 - In ``FK_dh()``, homogeneous matrices were generated for each joint using corresponding DH values (stored in ``test_kinematics.py``), and multiplied together to yield the position and orientation of the end effector
@@ -56,4 +67,4 @@ The team opted to use Denavit-Hartenberg parameters to implement kinematics, don
 
 
 ### *Next Steps*
-Right before the lab was shut down due to COVID-19, the team had an algorithm written for a pick-and-place function that would be commanded by mouse clicks in the GUI. From there, we would use color recognition and the stored ``Block`` variables to have the robot act autonomously based on block color, height, position, etc. That would have set us up nicely for the competition aspect of the project, where teams compete on a series of competency tasks on the last day of the project (see the [Balancebot README](https://github.com/chen-harrison/balancebot) for an idea on what it entails).
+Right before the lab was shut down due to COVID-19, the team had an algorithm written for a pick-and-place function that would be commanded by mouse clicks in the GUI. From there, we would use color recognition and the stored ``Block`` variables to have the robot act autonomously based on block color, height, position, etc. That would have set us up nicely for the competition aspect of the project, where teams compete on a series of competency tasks on the last day of the project.
