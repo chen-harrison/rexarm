@@ -1,16 +1,18 @@
 # Rexarm
 The Rexarm project is one of three projects I took part in for the Robotic Systems Laboratory course (ROB 550) at the University of Michigan. The objective was to program a 4-DOF robot manipulator that could use an overhead Kinect sensor to move and stack blocks based on color, but due to the COVID-19 pandemic, the project was cut short. Our team was still able to implement a majority of the desired functionality, however, the highlights of which I would like to share here. Thanks to teammates Preeti Kannapan and Niraj Patel for their work on the project.
 
+<sup style="line-height: 0.25em;"><u>NOTE 1</u>: While the progression of the project did not start with the Kinect sensor and end with robot kinematics, categorizing them this way is the most digestible.</sup>
+<br>
+<sup style="line-height: 0.25em;"><u>NOTE 2</u>: Due to the early end of the project, I was unable to capture relevant photos or data demonstrating the functionality, so many of these images and equations are taken from the ROB 550 lecture slides.</sup>
+
 <p align="center">
   <img src="media/architecture.JPG" width="480">
 </p>
 
-<sup>NOTE 1: While the progression of the project did not start with the Kinect sensor and end with robot kinematics, categorizing them this way is the most digestible.</sup>
-<br>
-<sup>NOTE 2: Due to the early end of the project, I was unable to capture relevant photos or data demonstrating the functionality, so many of these images and equations are taken from the ROB 550 lecture slides.</sup>
-
 
 ## Part 1: Kinect
+
+The camera component of the project involved calibrating the overhead Kinect camera such that its depth and RGB outputs were aligned, allowing it to detect block shape, color, and height (stack size).
 
 ### *Camera Calibration*
 The Kinect camera calibration and implementation in the GUI allows the user to mouse over the video feed and be given the pixel location location, as well as corresponding world frame (robot frame) coordinates. To do this, we performed the following:
@@ -32,6 +34,8 @@ This portion of the project was still being iterated upon, but we were able to g
 
 
 ## Part 2: Robot Manipulator
+
+The robot arm component of the project required the team to generate a sequence of joint positions to move through given a desired final position, as well as implement forward and inverse kinematics to move between Cartesian and joint spaces.
 
 ### *Trajectory Planning*
 ``trajectory_planner.py`` is where we programmed the behavior of the robot when moving between waypoints.
