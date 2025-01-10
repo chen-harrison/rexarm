@@ -1,5 +1,5 @@
-# Rexarm
-The Rexarm project is one of three projects I took part in for the Robotic Systems Laboratory course (ROB 550) at the University of Michigan. The objective was to program a 4-DOF robot manipulator that could use an overhead Kinect sensor to move and stack blocks based on color, but due to the COVID-19 pandemic, the project was cut short. Our team was still able to implement a majority of the desired functionality, however, the highlights of which I would like to share here. Thanks to teammates Preeti Kannapan and Niraj Patel for their work on the project.
+# Armbot
+The Armbot project is one of three projects I took part in for the Robotic Systems Laboratory course (ROB 550) at the University of Michigan. The objective was to program a 4-DOF robot manipulator that could use an overhead Kinect sensor to move and stack blocks based on color, but due to the COVID-19 pandemic, the project was cut short. Our team was still able to implement a majority of the desired functionality, however, the highlights of which I would like to share here. Thanks to teammates Preeti Kannapan and Niraj Patel for their work on the project.
 
 <sup style="line-height: 0.25em;"><u>NOTE 1</u>: While the progression of the project did not start with the Kinect sensor and end with robot kinematics, categorizing them this way is the most digestible.</sup>
 <br>
@@ -46,7 +46,7 @@ The robot arm component of the project required the team to generate a sequence 
   <img src="media/cubic.JPG" width="640">
 </p>
 
-- Interpolated positions are fed to the Rexarm in order to replicate the desired trajectory
+- Interpolated positions are fed to the arm in order to replicate the desired trajectory
 
 ### Forward/Inverse Kinematics
 
