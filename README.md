@@ -3,7 +3,7 @@ The Rexarm project is one of three projects I took part in for the Robotic Syste
 
 <sup style="line-height: 0.25em;"><u>NOTE 1</u>: While the progression of the project did not start with the Kinect sensor and end with robot kinematics, categorizing them this way is the most digestible.</sup>
 <br>
-<sup style="line-height: 0.25em;"><u>NOTE 2</u>: Due to the early end of the project, I was unable to capture relevant photos or data demonstrating the functionality, so many of these images and equations are taken from the ROB 550 lecture slides.</sup>
+<sup style="line-height: 0.25em;"><u>NOTE 2</u>: Due to the abrupt and premature end of the project, I was unable to capture relevant photos or data demonstrating the functionality, so many of these images and equations are taken from the ROB 550 lecture slides.</sup>
 
 <p align="center">
   <img src="media/architecture.JPG" width="480">
@@ -14,7 +14,7 @@ The Rexarm project is one of three projects I took part in for the Robotic Syste
 
 The camera component of the project involved calibrating the overhead Kinect camera such that its depth and RGB outputs were aligned, allowing it to detect block shape, color, and height (stack size).
 
-### *Camera Calibration*
+### Camera Calibration
 The Kinect camera calibration and implementation in the GUI allows the user to mouse over the video feed and be given the pixel location location, as well as corresponding world frame (robot frame) coordinates. To do this, we performed the following:
 - Found the affine transformation between the RGB and depth cameras by entering the coordinates of the board corners from both images into ``test_kinect.py``, then stored the result in ``kinect.py``
 
@@ -37,7 +37,7 @@ This portion of the project was still being iterated upon, but we were able to g
 
 The robot arm component of the project required the team to generate a sequence of joint positions to move through given a desired final position, as well as implement forward and inverse kinematics to move between Cartesian and joint spaces.
 
-### *Trajectory Planning*
+### Trajectory Planning
 ``trajectory_planner.py`` is where we programmed the behavior of the robot when moving between waypoints.
 - The team opted to use a cubic spline as the movement profile in order to prevent jerky motion and wear on the motors 
 - Given initial and final positions and velocities, we solve for the position equation of each joint, then the max speed dictates the initial and final times
@@ -48,7 +48,7 @@ The robot arm component of the project required the team to generate a sequence 
 
 - Interpolated positions are fed to the Rexarm in order to replicate the desired trajectory
 
-### *Forward/Inverse Kinematics*
+### Forward/Inverse Kinematics
 
 <p align="center">
   <img src="media/rexarm.JPG" width="360">
@@ -66,5 +66,5 @@ The team opted to use Denavit-Hartenberg parameters to implement kinematics, don
   <img src="media/ik.JPG" width="480">
 </p>
 
-### *Next Steps*
+### Next Steps
 Right before the lab was shut down due to COVID-19, the team had an algorithm written for a pick-and-place function that would be commanded by mouse clicks in the GUI. From there, we would use color recognition and the stored ``Block`` variables to have the robot act autonomously based on block color, height, position, etc. That would have set us up nicely for the competition aspect of the project, where teams compete on a series of competency tasks on the last day of the project.
