@@ -26,7 +26,7 @@ The Kinect camera calibration and implementation in the GUI allows the user to m
 - Wrote ``calibrate()`` in ``state_machine.py`` that takes in pixel locations on the board via mouse clicks, then uses ``cv2.solvePnP`` to find the extrinsic matrix that transforms between the camera frame and world frame
   - Stores the result in ``util/extrinsic.npy``, which is loaded by default on startup; ``calibration()`` only called if setup is moved/adjusted
 
-### *Block Detection*
+### Block Detection
 This portion of the project was still being iterated upon, but we were able to get the camera to identify blocks placed in the environment with function ``blockDetector()`` in ``kinect.py``. The process can be described as follows:
 - Identify the depth values assigned to the top of blocks, from a stack of 1 to a stack of 5 (note: the way Kinect reads depth values is not directly proportional to actual distance)
 - Search for surfaces within a margin of error of those depth values, removing the rest, and filtering the image for noise
